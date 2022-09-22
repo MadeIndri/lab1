@@ -1,10 +1,12 @@
 from django.urls import path
 from wishlist.views import show_wishlist
 from wishlist.views import showxml 
-#sesuaikan dengan nama fungsi yang dibuat
 from wishlist.views import showjson
 from wishlist.views import show_id_xml
 from wishlist.views import show_id_json
+from wishlist.views import register 
+from wishlist.views import login_user
+from wishlist.views import logout_user
 
 app_name = 'wishlist'
 
@@ -13,5 +15,8 @@ urlpatterns = [
     path('json/<int:id>', show_id_json, name='show_id_json'),  
     path('xml/', showxml, name='showxml'),
     path('json/', showjson, name='showjson'),
-    path('', show_wishlist, name='show_wishlist')
+    path('', show_wishlist, name='show_wishlist'),
+    path('login/', login_user, name='login'),
+    path('logout/', logout_user, name='logout'),
+    path('register/', register, name='register')
 ]
